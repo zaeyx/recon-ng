@@ -12,8 +12,7 @@ def parse_emails(s):
     return re.findall(r'([^\s]+@[^\s]+)', s)
 
 def parse_name(s):
-    h = html.parser.HTMLParser()
-    elements = [h.unescape(x) for x in s.strip().split()]
+    elements = [html.unescape(x) for x in s.strip().split()]
     # remove prefixes and suffixes
     names = []
     for i in range(0,len(elements)):
